@@ -1,5 +1,4 @@
-const { assert } = require("console");
-
+//const { assert } = require("console");
 const StarNotary = artifacts.require("StarNotary");
 
 var accounts;
@@ -130,7 +129,7 @@ it('lets a user transfer a star', async() => {
 
     await instance.createStar('Star PC 01', starId, { from : user01 });
 
-    assert.equal(await instance.ownerOf(starId), user);
+    assert.equal(await instance.ownerOf(starId), user01);
 
     await instance.transferStar(user02, starId, { from : user01 });
 
